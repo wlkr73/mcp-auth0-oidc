@@ -1,24 +1,30 @@
 {
-  "name": "unified-auth0-mcp",
+  "name": "mcp-aggregator",
   "version": "1.0.0",
-  "description": "Unified Auth0 MCP Server with integrated protected API",
+  "description": "MCP Aggregator Server - Unified access to multiple public MCP servers",
   "private": true,
-  "workspaces": [
-    "mcp-server",
-    "api"
-  ],
+  "main": "dist/index.js",
   "scripts": {
-    "dev:api": "npm run dev --workspace=api",
-    "dev:mcp": "npm run dev --workspace=mcp-server",
-    "dev": "npm run dev:api & npm run dev:mcp",
-    "deploy:api": "npm run deploy --workspace=api",
-    "deploy:mcp": "npm run deploy --workspace=mcp-server",
-    "deploy": "npm run deploy:api && npm run deploy:mcp",
-    "build": "npm run build --workspace=api && npm run build --workspace=mcp-server",
-    "type-check": "npm run type-check --workspace=api && npm run type-check --workspace=mcp-server"
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit",
+    "deploy": "./scripts/deploy.sh",
+    "tunnel": "node scripts/ssh-tunnel.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.13.1",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "tsx": "^4.7.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
   }
 }
