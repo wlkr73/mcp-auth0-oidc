@@ -86,7 +86,7 @@ const config = {
   localPort: parseInt(process.env.LOCAL_PORT || process.argv[2] || '8080'),
   remotePort: parseInt(process.env.REMOTE_PORT || process.argv[4] || '8080'),
   remoteHost: process.env.REMOTE_HOST || process.argv[3] || 'your-hetzner-server.com',
-  sshUser: process.env.SSH_USER || process.env.USER || 'root'
+  sshUser: process.env.SSH_USER || 'root'
 };
 
 if (require.main === module) {

@@ -49,15 +49,7 @@ npm run build
 
 # Create deployment package
 print_status "Creating deployment package..."
-tar -czf mcp-aggregator.tar.gz \
-    dist/ \
-    package.json \
-    package-lock.json \
-    config/ \
-    scripts/ \
-    ecosystem.config.js \
-    README.md \
-    .env.example
+tar -czf mcp-aggregator.tar.gz dist/ package.json package-lock.json config/ scripts/ ecosystem.config.js README.md
 
 # Transfer files to server
 print_status "Transferring files to server..."
