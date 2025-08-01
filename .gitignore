@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+.env
+.env.local
+.dev.vars
+*.vars
+dist/
+build/
+*.log
+.wrangler/

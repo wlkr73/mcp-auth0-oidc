@@ -1,0 +1,24 @@
+{
+  "name": "unified-auth0-mcp",
+  "version": "1.0.0",
+  "description": "Unified Auth0 MCP Server with integrated protected API",
+  "private": true,
+  "workspaces": [
+    "mcp-server",
+    "api"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=api",
+    "dev:mcp": "npm run dev --workspace=mcp-server",
+    "dev": "npm run dev:api & npm run dev:mcp",
+    "deploy:api": "npm run deploy --workspace=api",
+    "deploy:mcp": "npm run deploy --workspace=mcp-server",
+    "deploy": "npm run deploy:api && npm run deploy:mcp",
+    "build": "npm run build --workspace=api && npm run build --workspace=mcp-server",
+    "type-check": "npm run type-check --workspace=api && npm run type-check --workspace=mcp-server"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
