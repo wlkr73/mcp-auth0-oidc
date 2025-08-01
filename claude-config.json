@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mcp-aggregator": {
+      "command": "node",
+      "args": [
+        "/Users/adam/Projects/MCP Server/scripts/claude-client.js",
+        "8080",
+        "91.98.20.1",
+        "8080"
+      ],
+      "env": {}
+    }
+  }
+}
